@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>♚ 1300 Strategy Bank</title>
+  <title>♚ 1300 Strategy Bank · Plain English</title>
   <!-- Google Fonts + Font Awesome -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -31,7 +31,6 @@
       width: 100%;
     }
 
-    /* ---- HEADER ---- */
     .header {
       text-align: center;
       padding: 1.5rem 0 2.5rem;
@@ -60,7 +59,6 @@
       margin: 0 6px;
     }
 
-    /* ---- PREMIUM CARDS ---- */
     .card {
       background: rgba(20, 26, 36, 0.75);
       backdrop-filter: blur(6px);
@@ -120,7 +118,6 @@
       100% { opacity: 1; transform: translateY(0); }
     }
 
-    /* ---- DEEP-DIVE CONTENT ---- */
     .deep-section {
       margin-top: 1.6rem;
       padding-top: 1.6rem;
@@ -148,7 +145,8 @@
       color: #fc5c7d;
     }
 
-    .deep-section ul, .deep-section p {
+    .deep-section ul,
+    .deep-section p {
       font-weight: 400;
       line-height: 1.7;
       color: #cad2de;
@@ -197,7 +195,7 @@
       background: rgba(255, 255, 255, 0.03);
       padding: 0.6rem 1rem;
       border-radius: 10px;
-      font-family: 'Montserrat', monospace;
+      font-family: 'Montserrat', sans-serif;
       font-weight: 500;
       font-size: 0.95rem;
       border: 1px solid rgba(255, 255, 255, 0.04);
@@ -227,7 +225,6 @@
       color: #0b0e14;
     }
 
-    /* ---- QUIZ WIDGET ---- */
     .quiz-widget {
       background: linear-gradient(145deg, rgba(252, 92, 125, 0.12), rgba(240, 194, 127, 0.06));
       border: 1px solid rgba(252, 92, 125, 0.2);
@@ -260,7 +257,7 @@
       font-size: 0.9rem;
       color: #9aa5b5;
       font-weight: 500;
-      background: rgba(0,0,0,0.3);
+      background: rgba(0, 0, 0, 0.3);
       padding: 0.3rem 1.2rem;
       border-radius: 30px;
     }
@@ -372,24 +369,36 @@
       transform: none;
     }
 
-    /* ---- FOOTER ---- */
     .footer-note {
       text-align: center;
       color: #5a6a7f;
       font-size: 0.85rem;
       padding: 2rem 0 0.5rem;
-      border-top: 1px solid rgba(255,255,255,0.03);
+      border-top: 1px solid rgba(255, 255, 255, 0.03);
       margin-top: 1rem;
     }
 
-    /* ---- RESPONSIVE ---- */
     @media (max-width: 640px) {
-      body { padding: 1rem; }
-      .header h1 { font-size: 1.8rem; }
-      .card { padding: 1.2rem; }
-      .move-grid { grid-template-columns: 1fr; }
-      .quiz-options button { flex: 1 1 100%; max-width: 100%; }
-      .quiz-widget .quiz-header { flex-direction: column; align-items: flex-start; }
+      body {
+        padding: 1rem;
+      }
+      .header h1 {
+        font-size: 1.8rem;
+      }
+      .card {
+        padding: 1.2rem;
+      }
+      .move-grid {
+        grid-template-columns: 1fr;
+      }
+      .quiz-options button {
+        flex: 1 1 100%;
+        max-width: 100%;
+      }
+      .quiz-widget .quiz-header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
     }
   </style>
 </head>
@@ -399,11 +408,11 @@
   <!-- HEADER -->
   <div class="header">
     <h1>♚ 1300 Strategy Bank</h1>
-    <p><i class="fas fa-chess-queen"></i> Deep‑dive tactics · expandable guides · move trainer <i class="fas fa-chess-knight"></i></p>
+    <p><i class="fas fa-chess-queen"></i> No chess codes · plain English · interactive trainer <i class="fas fa-chess-knight"></i></p>
   </div>
 
   <!-- ======================================== -->
-  <!-- CARD 1 : PRE-MOVE CHECKLIST (deep dive)  -->
+  <!-- CARD 1 : PRE-MOVE CHECKLIST              -->
   <!-- ======================================== -->
   <div class="card">
     <div class="card-header" onclick="toggleCard(this)">
@@ -411,121 +420,123 @@
       <span class="toggle-icon"><i class="fas fa-chevron-down"></i></span>
     </div>
     <div class="card-body open">
-      <p style="font-weight:500; margin-bottom:1rem;">Run these 3 steps <strong>before every single move</strong> — this alone beats 80% of 1300 blunders.</p>
+      <p style="font-weight:500; margin-bottom:1rem;">Say these 3 steps out loud <strong>before every single move</strong> – they stop 80% of 1300‑level blunders.</p>
 
       <div class="deep-section">
-        <h3><i class="fas fa-shield-alt"></i> 1. Safety — “Is my piece hanging?”</h3>
+        <h3><i class="fas fa-shield-alt"></i> 1. Safety – “Is any of my pieces left hanging?”</h3>
         <ul>
-          <li>Scan every loose piece (queen, rooks, minor pieces). Count <strong>attackers vs. defenders</strong>.</li>
-          <li>If a piece is attacked as many times as it is defended, <em>do not move</em> until you reinforce or trade.</li>
-          <li>Pay special attention to your <strong>back‑rank</strong> — if your king is trapped behind pawns, a rook on the 8th can be deadly.</li>
+          <li>Look at your queen, rooks, and minor pieces. For each one, ask: “How many enemy pieces are attacking it, and how many of mine are defending it?”</li>
+          <li>If the attackers outnumber the defenders, <strong>do not move anything else</strong> until you protect that piece or trade it away.</li>
+          <li>Special attention: if your king is stuck behind its own pawns on the back row, an enemy rook or queen might deliver a sudden mate – give your king an escape square by pushing a side pawn.</li>
         </ul>
       </div>
 
       <div class="deep-section">
-        <h3><i class="fas fa-bullseye"></i> 2. Threats — “What is their last move attacking?”</h3>
+        <h3><i class="fas fa-bullseye"></i> 2. Threats – “What did my opponent just attack?”</h3>
         <ul>
-          <li>Identify the <strong>new square</strong> their piece just moved to. Did it open a diagonal for a bishop? Is it attacking your queen?</li>
-          <li>Ask: “Is my opponent threatening <strong>mate in 1</strong> or a winning fork?” Always respond to the biggest threat first.</li>
-          <li>If they attack your queen, consider a <strong>counter‑attack</strong> with check — don’t always retreat!</li>
+          <li>Find the piece your opponent just moved. Ask: “What new square is it attacking? Does it open a line for their bishop or queen?”</li>
+          <li>Ask: “Are they threatening to checkmate me in one move, or win my queen with a fork?” Always deal with the <strong>biggest</strong> threat first.</li>
+          <li>If they attack your queen, don’t panic and run – look for a counter‑attack that gives check. Sometimes the best defence is to attack back!</li>
         </ul>
       </div>
 
       <div class="deep-section">
-        <h3><i class="fas fa-brain"></i> 3. Blunder‑check — “Does my move leave something unprotected?”</h3>
+        <h3><i class="fas fa-brain"></i> 3. Blunder‑check – “Does my move accidentally leave something behind?”</h3>
         <ul>
-          <li>After you mentally make the move, <strong>re‑evaluate</strong>: does it remove a defender from your king? Does it block your rook’s line?</li>
-          <li>Never move a piece if it <strong>unpins</strong> an enemy piece that was trapped — unless you gain a bigger advantage.</li>
-          <li>The golden rule: <strong>If you see a good move, look for a better one.</strong> Pause 3 more seconds.</li>
+          <li>Picture your move in your head. Now re‑evaluate: does moving that piece remove a defender from your king? Does it block your rook’s line of sight?</li>
+          <li>Never move a piece if it <strong>unpins</strong> an enemy piece that was trapped – unless you win something even bigger.</li>
+          <li>Golden rule: if you spot a good move, <strong>wait three seconds</strong> and look for an even better one.</li>
         </ul>
       </div>
 
       <div class="highlight-box">
         <i class="fas fa-lightbulb" style="color:#f0c27f; margin-right:10px;"></i>
-        <strong>Pro tip:</strong> Whisper these three out loud as you look at the board. It forces your brain into structured mode.
+        <strong>Pro tip:</strong> Whisper “Safety – Threats – Blunder” as you look at the board. This forces your brain into a disciplined routine.
       </div>
     </div>
   </div>
 
   <!-- ======================================== -->
-  <!-- CARD 2 : OPENINGS (deep dive)            -->
+  <!-- CARD 2 : OPENINGS (plain English)        -->
   <!-- ======================================== -->
   <div class="card">
     <div class="card-header" onclick="toggleCard(this)">
-      <h2><i class="fas fa-chess-pawn"></i> Opening Repertoire <span class="badge">Deep lines</span></h2>
+      <h2><i class="fas fa-chess-pawn"></i> Opening Repertoire <span class="badge">Simple steps</span></h2>
       <span class="toggle-icon"><i class="fas fa-chevron-down"></i></span>
     </div>
     <div class="card-body">
-      <p style="margin-bottom:1rem;">Pick <strong>one</strong> for White and <strong>one</strong> for Black. Master them cold — no need for 20 openings.</p>
+      <p style="margin-bottom:1rem;">Pick <strong>one</strong> for White and <strong>one</strong> for Black. Learn these in plain steps – no memorising long letter‑number sequences.</p>
 
       <!-- White -->
       <div class="deep-section">
-        <h3><i class="fas fa-chess-king"></i> White · London System (Solid & reliable)</h3>
-        <p><strong>Core moves:</strong></p>
+        <h3><i class="fas fa-chess-king"></i> White · The London System (rock‑solid)</h3>
+        <p><strong>Your moves in order:</strong></p>
         <div class="move-grid">
-          <div class="move-line"><span>1.</span> d4</div>
-          <div class="move-line"><span>2.</span> Bf4</div>
-          <div class="move-line"><span>3.</span> e3</div>
-          <div class="move-line"><span>4.</span> Nf3</div>
-          <div class="move-line"><span>5.</span> Be2</div>
-          <div class="move-line"><span>6.</span> 0‑0</div>
-          <div class="move-line"><span>7.</span> c3</div>
-          <div class="move-line"><span>8.</span> Nbd2</div>
+          <div class="move-line"><span>1.</span> Push the pawn in front of your queen two squares forward.</div>
+          <div class="move-line"><span>2.</span> Bring your king’s bishop out to the square right next to your queen’s knight (pointing diagonally toward their king side).</div>
+          <div class="move-line"><span>3.</span> Push the pawn in front of your king one square forward.</div>
+          <div class="move-line"><span>4.</span> Bring your king’s knight out to the square just in front of your king’s bishop’s pawn.</div>
+          <div class="move-line"><span>5.</span> Develop your king’s bishop to the square directly in front of your king (or next to it).</div>
+          <div class="move-line"><span>6.</span> Castle king‑side (tuck your king behind the three pawns on the right).</div>
+          <div class="move-line"><span>7.</span> Push the pawn in front of your queen’s bishop one square forward.</div>
+          <div class="move-line"><span>8.</span> Bring your queen’s knight out to the square in front of your queen’s bishop’s pawn.</div>
         </div>
         <ul>
-          <li><strong>Why?</strong> Avoids sharp theory. Bishop on f4 is active, pawns on e3/c3 give a rock‑solid center.</li>
-          <li>If Black plays …c5, you can take and recapture with the pawn — keep the structure intact.</li>
-          <li>Typical plan: push e4 (after proper preparation) to break the center.</li>
+          <li><strong>Why?</strong> This setup avoids wild traps. Your bishop is active, and your center pawns form a wall that’s hard to break.</li>
+          <li>If your opponent attacks your center with their pawn, you can capture and recapture – keep your structure intact.</li>
+          <li>Your typical plan: later, push your king’s pawn one more square to open up the center when you’re ready.</li>
         </ul>
       </div>
 
       <!-- Black vs e4 -->
       <div class="deep-section">
-        <h3><i class="fas fa-chess-king"></i> Black vs e4 · Caro‑Kann (Ultra‑solid)</h3>
-        <p><strong>Core moves:</strong></p>
+        <h3><i class="fas fa-chess-king"></i> Black vs e4 · The Caro‑Kann (super safe)</h3>
+        <p><strong>Your moves in order (when they open with the king’s pawn):</strong></p>
         <div class="move-grid">
-          <div class="move-line"><span>1.</span> e4 c6</div>
-          <div class="move-line"><span>2.</span> d4 d5</div>
-          <div class="move-line"><span>3.</span> exd5 cxd5</div>
-          <div class="move-line"><span>4.</span> Bd3 Nc6</div>
-          <div class="move-line"><span>5.</span> c3 Nf6</div>
-          <div class="move-line"><span>6.</span> Bf4 Bg4</div>
+          <div class="move-line"><span>1.</span> They push their king’s pawn two squares – you answer by pushing the pawn in front of your queen’s bishop one square forward.</div>
+          <div class="move-line"><span>2.</span> They push their queen’s pawn two squares – you push your queen’s pawn two squares forward.</div>
+          <div class="move-line"><span>3.</span> They capture your queen’s pawn with theirs – you recapture with your pawn.</div>
+          <div class="move-line"><span>4.</span> Develop your king’s bishop to the square just in front of your queen’s knight.</div>
+          <div class="move-line"><span>5.</span> Push the pawn in front of your queen’s bishop one square forward to support your center.</div>
+          <div class="move-line"><span>6.</span> Bring your king’s knight out to the square in front of your king’s bishop’s pawn.</div>
+          <div class="move-line"><span>7.</span> Bring your queen’s bishop out to the square just in front of your queen’s rook’s pawn (attacking their knight).</div>
         </div>
         <ul>
-          <li><strong>Why?</strong> You get a pawn on d5 that exchanges their center. Very few traps.</li>
-          <li>Develop the bishop to f5 or g4 to put pressure on their knight.</li>
-          <li>Castle short quickly, then play …e6 and …Bd6 to trade off their active bishop.</li>
+          <li><strong>Why?</strong> You get a pawn on your queen’s file that exchanges their center pawn. Very few tricks against this.</li>
+          <li>Develop your queen’s bishop to either the square in front of your queen’s rook’s pawn or the square in front of your queen’s knight to put pressure on their pieces.</li>
+          <li>Castle king‑side quickly, then push your king’s pawn one square and trade off their active bishop.</li>
         </ul>
       </div>
 
       <!-- Black vs d4 -->
       <div class="deep-section">
         <h3><i class="fas fa-chess-king"></i> Black vs d4 · King’s Indian Setup</h3>
-        <p><strong>Core moves:</strong></p>
+        <p><strong>Your moves in order (when they open with the queen’s pawn):</strong></p>
         <div class="move-grid">
-          <div class="move-line"><span>1.</span> d4 Nf6</div>
-          <div class="move-line"><span>2.</span> c4 g6</div>
-          <div class="move-line"><span>3.</span> Nc3 Bg7</div>
-          <div class="move-line"><span>4.</span> e4 d6</div>
-          <div class="move-line"><span>5.</span> Be2 0‑0</div>
-          <div class="move-line"><span>6.</span> Nf3 e5</div>
+          <div class="move-line"><span>1.</span> They push their queen’s pawn two squares – you bring your king’s knight out to the square in front of your king’s bishop’s pawn.</div>
+          <div class="move-line"><span>2.</span> They push their queen’s bishop’s pawn two squares – you push your king’s bishop’s pawn one square forward.</div>
+          <div class="move-line"><span>3.</span> They bring their queen’s knight out – you develop your king’s bishop to the square in front of your king’s rook’s pawn (fianchetto).</div>
+          <div class="move-line"><span>4.</span> They push their king’s pawn two squares – you push your queen’s bishop’s pawn one square forward.</div>
+          <div class="move-line"><span>5.</span> Develop your king’s bishop to the square in front of your king (or next to it).</div>
+          <div class="move-line"><span>6.</span> Castle king‑side.</div>
+          <div class="move-line"><span>7.</span> Bring your king’s knight out – then push your king’s pawn two squares forward to challenge their center.</div>
         </div>
         <ul>
-          <li><strong>Why?</strong> Fianchetto gives king safety and a powerful bishop on the long diagonal.</li>
-          <li>Strike in the center with …e5 to challenge their pawn chain.</li>
-          <li>Typical plan: build a kingside attack with …Ne8‑f6‑g5 and …f5.</li>
+          <li><strong>Why?</strong> The bishop on the long diagonal is a monster – it gives you great king safety and attacks their center.</li>
+          <li>Strike in the center by pushing your king’s pawn two squares to challenge their pawn chain.</li>
+          <li>Typical plan: build up an attack on their king side by bringing your knight around and pushing your king’s bishop’s pawn.</li>
         </ul>
       </div>
 
       <div class="highlight-box">
         <i class="fas fa-clock" style="color:#f0c27f; margin-right:10px;"></i>
-        <strong>Golden rule:</strong> Castle <strong>before move 10</strong>. Don’t bring the queen out before move 10. Never move the same piece twice in the opening unless forced.
+        <strong>Golden rule:</strong> Get your king safe by castling <strong>before move 10</strong>. Never bring your queen out early. And don’t move the same piece twice in the opening unless you absolutely have to.
       </div>
     </div>
   </div>
 
   <!-- ======================================== -->
-  <!-- CARD 3 : MIDDLEGAME (deep dive)          -->
+  <!-- CARD 3 : MIDDLEGAME TACTICS              -->
   <!-- ======================================== -->
   <div class="card">
     <div class="card-header" onclick="toggleCard(this)">
@@ -533,53 +544,53 @@
       <span class="toggle-icon"><i class="fas fa-chevron-down"></i></span>
     </div>
     <div class="card-body">
-      <p style="margin-bottom:1rem;">This is where games are won. Learn these <strong>4 tactical patterns</strong> by heart.</p>
+      <p style="margin-bottom:1rem;">These <strong>4 patterns</strong> win more games than anything else. Learn to see them in your sleep.</p>
 
       <div class="deep-section">
-        <h3><i class="fas fa-code-branch"></i> Fork · One piece attacks two</h3>
+        <h3><i class="fas fa-code-branch"></i> Fork – One piece attacks two enemies at once</h3>
         <ul>
-          <li><strong>Knight fork:</strong> Nc7+ forks the king and rook. Ne7+ forks king and queen.</li>
-          <li><strong>Pawn fork:</strong> d4‑d5 can attack a knight and bishop simultaneously.</li>
-          <li><em>Tip:</em> Always check if your opponent’s pieces are on the same colour square as your knight.</li>
+          <li><strong>Knight fork:</strong> Move your knight so it attacks their king and their rook at the same time – they have to save the king, and you take the rook.</li>
+          <li><strong>Pawn fork:</strong> Push a pawn forward so it attacks both a knight and a bishop simultaneously.</li>
+          <li><em>Tip:</em> Knights attack the opposite colour square they stand on – so if their king and queen are on the same colour, your knight might be able to fork them!</li>
         </ul>
       </div>
 
       <div class="deep-section">
-        <h3><i class="fas fa-thumbtack"></i> Pin · Immobilise a defender</h3>
+        <h3><i class="fas fa-thumbtack"></i> Pin – Freeze a defender in place</h3>
         <ul>
-          <li><strong>Absolute pin:</strong> a piece is in front of the <em>king</em> — it cannot move at all (e.g., Bg5 pinning a knight to the queen).</li>
-          <li><strong>Relative pin:</strong> in front of the queen or rook — moving it loses material, but it’s not illegal.</li>
-          <li>Pins are deadly in the middlegame — pile up attackers on a pinned piece to win it.</li>
+          <li><strong>Absolute pin:</strong> If you line up a bishop or rook so that the piece in front is shielding the <em>king</em>, that piece <strong>cannot legally move</strong> – because that would expose the king to check.</li>
+          <li><strong>Relative pin:</strong> If the shielded piece is in front of the queen or a rook – it <em>can</em> move, but you’ll lose your queen if you do, so it’s stuck practically.</li>
+          <li>Pins are deadly: pile up more attackers onto a pinned piece – you’ll win it eventually.</li>
         </ul>
       </div>
 
       <div class="deep-section">
-        <h3><i class="fas fa-arrow-right"></i> Skewer · The bigger fish</h3>
+        <h3><i class="fas fa-arrow-right"></i> Skewer – Attack the big fish to catch the small one behind</h3>
         <ul>
-          <li>Attack a valuable piece (king/queen) so that when it moves, a less valuable piece behind it is captured.</li>
-          <li>Classic: rook on the same file as their king and queen — the king must move, then you take the queen.</li>
-          <li>Bishops on a diagonal can also skewer rooks or queens.</li>
+          <li>Line up your rook or bishop so it attacks their king (or queen). When they move that valuable piece out of the way, you capture the less valuable piece that was sitting behind it.</li>
+          <li>Classic example: your rook on the same file as their king and queen – you give check, their king moves, then you take their queen.</li>
+          <li>Bishops can also skewer rooks or queens along a diagonal.</li>
         </ul>
       </div>
 
       <div class="deep-section">
-        <h3><i class="fas fa-chess-rook"></i> Back‑rank mate · The silent killer</h3>
+        <h3><i class="fas fa-chess-rook"></i> Back‑rank mate – The silent killer</h3>
         <ul>
-          <li>If the king is trapped behind pawns on g2/h2 or g7/h7 (no escape squares), a rook or queen on the 8th (or 1st) rank delivers mate.</li>
-          <li>Before you castle, always think: <strong>“Do I need luft?”</strong> — push h3 or a3 to give your king an escape.</li>
-          <li>In the middlegame, look for rook lifts to the 2nd or 7th rank to pressure the back rank.</li>
+          <li>If your opponent’s king is trapped on the back row with no escape squares (pawns still in front of it), a rook or queen on that back row delivers checkmate.</li>
+          <li><strong>Prevention:</strong> Before you castle, ask: “Do I need an escape square?” – push a side pawn (like the one in front of your rook) so your king can slip out if needed.</li>
+          <li>In the middlegame, look to lift your rook to the second or seventh rank to pressure their back row.</li>
         </ul>
       </div>
 
       <div class="highlight-box">
         <i class="fas fa-sync-alt" style="color:#f0c27f; margin-right:10px;"></i>
-        <strong>Counter‑attack principle:</strong> When they attack your piece, look for a <em>bigger</em> threat first — a check or mate that forces them to respond.
+        <strong>Counter‑attack principle:</strong> When they attack your piece, don’t always retreat. Look for a <em>bigger</em> threat – a check or a mate that forces them to respond to you first.
       </div>
     </div>
   </div>
 
   <!-- ======================================== -->
-  <!-- CARD 4 : ENDGAME (deep dive)             -->
+  <!-- CARD 4 : ENDGAME (plain English)         -->
   <!-- ======================================== -->
   <div class="card">
     <div class="card-header" onclick="toggleCard(this)">
@@ -587,58 +598,58 @@
       <span class="toggle-icon"><i class="fas fa-chevron-down"></i></span>
     </div>
     <div class="card-body">
-      <p style="margin-bottom:1rem;">Most 1200‑1300 players reach a winning endgame and throw it. Lock these in.</p>
+      <p style="margin-bottom:1rem;">Most 1200‑1300 players reach a winning endgame and throw it away. Lock these rules in.</p>
 
       <div class="deep-section">
         <h3><i class="fas fa-balance-scale"></i> The 50/50 rule</h3>
         <ul>
-          <li>If you are <strong>up a pawn</strong>: trade <em>pieces</em> (queens, rooks) but <strong>never trade pawns</strong> — keep your extra pawn alive.</li>
-          <li>If you are <strong>down a pawn</strong>: trade pawns to remove their advantage, and keep pieces on to complicate.</li>
+          <li>If you are <strong>up by one pawn</strong>: trade <em>pieces</em> (queens, rooks) but <strong>never trade pawns</strong> – keep that extra pawn alive to become your winning ticket.</li>
+          <li>If you are <strong>down by a pawn</strong>: trade pawns to remove their advantage, but keep pieces on the board to create complications.</li>
         </ul>
       </div>
 
       <div class="deep-section">
         <h3><i class="fas fa-walking"></i> King activation</h3>
         <ul>
-          <li>In the endgame, the king is a <strong>fighting piece</strong>. Walk it toward the center to support pawns.</li>
-          <li>Rule of thumb: the king should be on the same side as your passed pawn to escort it.</li>
+          <li>In the endgame, your king is no longer a sheltered piece – it becomes a <strong>fighting warrior</strong>. Walk it toward the center to support your pawns.</li>
+          <li>Rule of thumb: your king should be on the same side as your passed pawn to escort it all the way.</li>
         </ul>
       </div>
 
       <div class="deep-section">
-        <h3><i class="fas fa-chess-queen"></i> Rook + King mate (box method)</h3>
+        <h3><i class="fas fa-chess-queen"></i> Rook + King mate (the box method)</h3>
         <ul>
-          <li>Use the rook to <strong>cut off</strong> the enemy king on a rank or file.</li>
-          <li>Bring your king closer to support the rook.</li>
-          <li>Deliver checks along the rank/file, shrinking the box until mate.</li>
+          <li>Use your rook to <strong>cut off</strong> their king on a row or column – like a barrier.</li>
+          <li>Bring your king closer to help the rook.</li>
+          <li>Give checks along that row or column, shrinking the box smaller and smaller until it’s mate.</li>
         </ul>
       </div>
 
       <div class="deep-section">
         <h3><i class="fas fa-chess-queen"></i> Queen + King mate</h3>
         <ul>
-          <li>Place your queen a <strong>knight’s move</strong> away from their king — this restricts all escape squares.</li>
-          <li>Copy their king’s moves until it is pushed to the edge, then bring your king to deliver the final mate.</li>
+          <li>Place your queen one square diagonally away from their king (like a knight’s jump away) – this covers all the escape squares.</li>
+          <li>Copy their king’s moves – if they go up, you go up; if they go left, you go left – until they are pushed to the edge, then bring your king to deliver the final mate.</li>
         </ul>
       </div>
 
       <div class="deep-section">
         <h3><i class="fas fa-arrow-up"></i> Passed pawns</h3>
         <ul>
-          <li>Put your rook <strong>behind</strong> the passed pawn (on its file) to push it up the board.</li>
-          <li>If you have two passed pawns separated by one file, they are unstoppable — use them as a battering ram.</li>
+          <li>Put your rook <strong>behind</strong> your passed pawn (on the same file, behind it) to push it forward relentlessly.</li>
+          <li>If you have two passed pawns with one file between them, they are unstoppable – use them like a battering ram.</li>
         </ul>
       </div>
 
       <div class="highlight-box">
         <i class="fas fa-crown" style="color:#f0c27f; margin-right:10px;"></i>
-        <strong>Endgame motto:</strong> “Passed pawns must be pushed.” And never rush — take your time to calculate.
+        <strong>Endgame motto:</strong> “Passed pawns must be pushed.” And never rush – take your time to calculate each move carefully.
       </div>
     </div>
   </div>
 
   <!-- ======================================== -->
-  <!-- MOVE TRAINER QUIZ                        -->
+  <!-- MOVE TRAINER QUIZ (plain English)        -->
   <!-- ======================================== -->
   <div class="quiz-widget" id="quizWidget">
     <div class="quiz-header">
@@ -657,13 +668,13 @@
   </div>
 
   <div class="footer-note">
-    <i class="fas fa-chess-board"></i> Drill these until they’re automatic — 1300 is yours.
+    <i class="fas fa-chess-board"></i> Drill these until they’re automatic – 1300 is yours.
   </div>
 
 </div>
 
 <script>
-  // ---- CARD TOGGLE (expand/collapse) ----
+  // ---- CARD TOGGLE ----
   function toggleCard(headerEl) {
     const body = headerEl.parentElement.querySelector('.card-body');
     const icon = headerEl.querySelector('.toggle-icon i');
@@ -676,49 +687,60 @@
     }
   }
 
-  // ---- QUIZ DATA ----
-  const quizData = [
-    {
-      question: 'Before every move, what is the FIRST thing you must check?',
-      options: ['Safety (is my piece hanging?)', 'Threats (what are they attacking?)', 'Blunder-check (does my move leave something?)'],
+  // ---- QUIZ DATA (all in plain English) ----
+  const quizData = [{
+      question: 'Before every move, what is the VERY FIRST thing you must check?',
+      options: [
+        'Safety – are any of my pieces left unprotected?',
+        'Threats – what is my opponent attacking?',
+        'Blunder – does my move leave something behind?'
+      ],
       correct: 0,
-      explanation: '✅ Safety first! Check if your queen, rooks, or minor pieces are undefended. If they are, fix that before anything else.'
+      explanation: '✅ Safety first! Check if your queen, rooks, or minor pieces are undefended. Fix that before anything else.'
     },
     {
-      question: 'What tactic attacks two pieces at once with a single move?',
+      question: 'What tactic uses one piece to attack two enemy pieces at the same time?',
       options: ['Pin', 'Fork', 'Skewer'],
       correct: 1,
       explanation: '✅ A fork! Knights and pawns are classic forking pieces. Always look for double attacks.'
     },
     {
-      question: 'In the endgame, if you are up a pawn, what should you do?',
-      options: ['Trade pieces & keep pawns', 'Trade pawns & keep pieces', 'Push the pawn immediately'],
+      question: 'In the endgame, if you are up by one pawn, what should you do?',
+      options: [
+        'Trade pieces but keep your pawns',
+        'Trade pawns but keep your pieces',
+        'Push your extra pawn immediately'
+      ],
       correct: 0,
-      explanation: '✅ Trade pieces (queens/rooks) to reduce counterplay, but KEEP your pawns — that extra pawn is your win condition.'
+      explanation: '✅ Trade pieces (queens/rooks) to reduce their counterplay, but KEEP your pawns – that extra pawn is your win condition.'
     },
     {
-      question: 'Which opening starts with 1.d4, 2.Bf4, 3.e3?',
-      options: ['King\'s Indian', 'Caro-Kann', 'London System'],
+      question: 'Which opening for White starts by pushing the queen’s pawn, then bringing the king’s bishop out early, then pushing the king’s pawn one square?',
+      options: ['King’s Indian Setup', 'Caro‑Kann', 'London System'],
       correct: 2,
       explanation: '✅ The London System! Solid, easy to learn, and avoids early traps. Perfect for club players.'
     },
     {
-      question: 'True or False: You should bring your queen out before move 10 in the opening.',
+      question: 'True or False: You should bring your queen out early (before move 10) in the opening.',
       options: ['True', 'False'],
       correct: 1,
-      explanation: '❌ False! Early queen moves allow your opponent to develop pieces while attacking your queen, losing you tempo. Develop minor pieces first!'
+      explanation: '❌ False! Early queen moves allow your opponent to develop pieces while attacking your queen, wasting your time. Develop minor pieces first!'
     },
     {
-      question: 'What is a "skewer"?',
-      options: ['Attack a valuable piece so a less valuable one is captured behind it', 'Immobilise a piece in front of the king', 'Attack two pieces at once'],
+      question: 'What is a “skewer”?',
+      options: [
+        'Attack a valuable piece so a less valuable one behind it gets captured',
+        'Freeze a piece in front of the king so it cannot move',
+        'Attack two pieces at the same time with one move'
+      ],
       correct: 0,
-      explanation: '✅ A skewer! Line up your rook/bishop so the king or queen is forced to move, exposing a second piece behind it.'
+      explanation: '✅ A skewer! Line up your rook or bishop so the king or queen is forced to move, exposing a second piece behind it for capture.'
     }
   ];
 
   let currentIndex = 0;
   let answered = false;
-  let totalQuestions = quizData.length;
+  const totalQuestions = quizData.length;
 
   const qEl = document.getElementById('quizQuestion');
   const optEl = document.getElementById('quizOptions');
@@ -753,9 +775,8 @@
     allBtns.forEach(b => b.disabled = true);
 
     const data = quizData[currentIndex];
-    let isCorrect = selected === correct;
+    const isCorrect = selected === correct;
 
-    // highlight correct/wrong
     allBtns.forEach((b, i) => {
       if (i === correct) b.classList.add('correct');
       else if (i === selected && !isCorrect) b.classList.add('wrong');
@@ -773,15 +794,11 @@
   nextBtn.addEventListener('click', () => {
     currentIndex = (currentIndex + 1) % totalQuestions;
     loadQuestion(currentIndex);
-    // scroll to quiz smoothly
     document.getElementById('quizWidget').scrollIntoView({ behavior: 'smooth', block: 'center' });
   });
 
   // ---- INIT ----
   loadQuestion(0);
-
-  // ---- auto-open first card body? already open in HTML ----
-  // (the Pre-Move card has class "open" by default)
 </script>
 </body>
 </html>
