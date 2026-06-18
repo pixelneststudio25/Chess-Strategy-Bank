@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>♚ 1300 Strategy Bank</title>
+  <!-- Google Fonts + Font Awesome -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background: #0b0e14;
+      color: #e8edf5;
+      padding: 2rem 1.5rem;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+    }
+
+    .container {
+      max-width: 1100px;
+      width: 100%;
+    }
+
+    /* ---- HEADER ---- */
+    .header {
+      text-align: center;
+      padding: 1.5rem 0 2.5rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+      margin-bottom: 2.5rem;
+    }
+
+    .header h1 {
+      font-size: 2.6rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, #f0c27f, #fc5c7d);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      letter-spacing: -0.5px;
+    }
+
+    .header p {
+      font-weight: 400;
+      color: #9aa5b5;
+      font-size: 1.1rem;
+      margin-top: 0.4rem;
+    }
+
+    .header p i {
+      color: #fc5c7d;
+      margin: 0 6px;
+    }
+
+    /* ---- PREMIUM CARDS ---- */
+    .card {
+      background: rgba(20, 26, 36, 0.75);
+      backdrop-filter: blur(6px);
+      border-radius: 24px;
+      padding: 1.8rem 2rem;
+      margin-bottom: 2rem;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      box-shadow: 0 20px 40px -12px rgba(0, 0, 0, 0.6);
+      transition: all 0.2s ease;
+    }
+
+    .card-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .card-header h2 {
+      font-weight: 700;
+      font-size: 1.5rem;
+      letter-spacing: -0.3px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .card-header h2 i {
+      color: #f0c27f;
+      font-size: 1.6rem;
+      width: 2rem;
+    }
+
+    .card-header .toggle-icon {
+      font-size: 1.2rem;
+      color: #7a8aa0;
+      transition: transform 0.3s ease;
+    }
+
+    .card-body {
+      margin-top: 1.4rem;
+      display: none;
+      animation: fadeSlide 0.35s ease forwards;
+    }
+
+    .card-body.open {
+      display: block;
+    }
+
+    .card-header .toggle-icon.rotated {
+      transform: rotate(180deg);
+    }
+
+    @keyframes fadeSlide {
+      0% { opacity: 0; transform: translateY(-8px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ---- DEEP-DIVE CONTENT ---- */
+    .deep-section {
+      margin-top: 1.6rem;
+      padding-top: 1.6rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .deep-section:first-of-type {
+      margin-top: 0;
+      padding-top: 0;
+      border-top: none;
+    }
+
+    .deep-section h3 {
+      font-weight: 600;
+      font-size: 1.15rem;
+      color: #f0c27f;
+      margin-bottom: 0.8rem;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .deep-section h3 i {
+      font-size: 1rem;
+      color: #fc5c7d;
+    }
+
+    .deep-section ul, .deep-section p {
+      font-weight: 400;
+      line-height: 1.7;
+      color: #cad2de;
+      font-size: 0.98rem;
+    }
+
+    .deep-section ul {
+      padding-left: 1.5rem;
+      list-style: none;
+    }
+
+    .deep-section ul li {
+      margin-bottom: 0.5rem;
+      position: relative;
+      padding-left: 1.4rem;
+    }
+
+    .deep-section ul li::before {
+      content: "▹";
+      position: absolute;
+      left: 0;
+      color: #fc5c7d;
+      font-weight: 600;
+    }
+
+    .highlight-box {
+      background: rgba(252, 92, 125, 0.08);
+      border-left: 4px solid #fc5c7d;
+      padding: 1rem 1.4rem;
+      border-radius: 12px;
+      margin: 1rem 0;
+    }
+
+    .highlight-box strong {
+      color: #f0c27f;
+    }
+
+    .move-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.8rem;
+      margin: 0.8rem 0;
+    }
+
+    .move-grid .move-line {
+      background: rgba(255, 255, 255, 0.03);
+      padding: 0.6rem 1rem;
+      border-radius: 10px;
+      font-family: 'Montserrat', monospace;
+      font-weight: 500;
+      font-size: 0.95rem;
+      border: 1px solid rgba(255, 255, 255, 0.04);
+    }
+
+    .move-grid .move-line span {
+      color: #9aa5b5;
+      font-weight: 400;
+      margin-right: 6px;
+    }
+
+    .badge {
+      display: inline-block;
+      background: #fc5c7d;
+      color: #fff;
+      font-size: 0.7rem;
+      font-weight: 700;
+      padding: 0.2rem 0.8rem;
+      border-radius: 20px;
+      letter-spacing: 0.5px;
+      margin-left: 10px;
+      text-transform: uppercase;
+    }
+
+    .badge.gold {
+      background: #f0c27f;
+      color: #0b0e14;
+    }
+
+    /* ---- QUIZ WIDGET ---- */
+    .quiz-widget {
+      background: linear-gradient(145deg, rgba(252, 92, 125, 0.12), rgba(240, 194, 127, 0.06));
+      border: 1px solid rgba(252, 92, 125, 0.2);
+      border-radius: 20px;
+      padding: 1.8rem 2rem;
+      margin-top: 2.5rem;
+    }
+
+    .quiz-widget .quiz-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .quiz-widget .quiz-header h3 {
+      font-weight: 700;
+      font-size: 1.3rem;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .quiz-widget .quiz-header h3 i {
+      color: #f0c27f;
+    }
+
+    .quiz-progress {
+      font-size: 0.9rem;
+      color: #9aa5b5;
+      font-weight: 500;
+      background: rgba(0,0,0,0.3);
+      padding: 0.3rem 1.2rem;
+      border-radius: 30px;
+    }
+
+    .quiz-question {
+      margin: 1.6rem 0 1.2rem;
+      font-size: 1.15rem;
+      font-weight: 500;
+      line-height: 1.5;
+      min-height: 3.5rem;
+    }
+
+    .quiz-options {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+      margin-bottom: 1.2rem;
+    }
+
+    .quiz-options button {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      color: #e8edf5;
+      padding: 0.7rem 1.8rem;
+      border-radius: 40px;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 500;
+      font-size: 0.95rem;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      flex: 1 0 auto;
+      max-width: 260px;
+    }
+
+    .quiz-options button:hover {
+      background: rgba(255, 255, 255, 0.08);
+      border-color: rgba(255, 255, 255, 0.2);
+      transform: scale(1.02);
+    }
+
+    .quiz-options button.correct {
+      background: #2e7d5e;
+      border-color: #4caf84;
+      color: #fff;
+    }
+
+    .quiz-options button.wrong {
+      background: #7d2e3e;
+      border-color: #fc5c7d;
+      color: #fff;
+    }
+
+    .quiz-options button:disabled {
+      cursor: not-allowed;
+      opacity: 0.6;
+    }
+
+    .quiz-feedback {
+      padding: 0.8rem 1.2rem;
+      border-radius: 12px;
+      font-weight: 500;
+      margin-top: 0.2rem;
+      min-height: 3.2rem;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .quiz-feedback .fb-icon {
+      font-size: 1.4rem;
+    }
+
+    .quiz-feedback.correct-fb {
+      background: rgba(46, 125, 94, 0.2);
+      border: 1px solid rgba(76, 175, 132, 0.3);
+      color: #8bddb6;
+    }
+
+    .quiz-feedback.wrong-fb {
+      background: rgba(125, 46, 62, 0.2);
+      border: 1px solid rgba(252, 92, 125, 0.3);
+      color: #f7a6b5;
+    }
+
+    .quiz-next-btn {
+      background: #f0c27f;
+      color: #0b0e14;
+      border: none;
+      padding: 0.6rem 2.2rem;
+      border-radius: 40px;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 0.95rem;
+      cursor: pointer;
+      transition: 0.2s;
+      margin-top: 0.8rem;
+      float: right;
+    }
+
+    .quiz-next-btn:hover {
+      transform: scale(1.04);
+      background: #fc5c7d;
+      color: #fff;
+    }
+
+    .quiz-next-btn:disabled {
+      opacity: 0.3;
+      cursor: not-allowed;
+      transform: none;
+    }
+
+    /* ---- FOOTER ---- */
+    .footer-note {
+      text-align: center;
+      color: #5a6a7f;
+      font-size: 0.85rem;
+      padding: 2rem 0 0.5rem;
+      border-top: 1px solid rgba(255,255,255,0.03);
+      margin-top: 1rem;
+    }
+
+    /* ---- RESPONSIVE ---- */
+    @media (max-width: 640px) {
+      body { padding: 1rem; }
+      .header h1 { font-size: 1.8rem; }
+      .card { padding: 1.2rem; }
+      .move-grid { grid-template-columns: 1fr; }
+      .quiz-options button { flex: 1 1 100%; max-width: 100%; }
+      .quiz-widget .quiz-header { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+
+  <!-- HEADER -->
+  <div class="header">
+    <h1>♚ 1300 Strategy Bank</h1>
+    <p><i class="fas fa-chess-queen"></i> Deep‑dive tactics · expandable guides · move trainer <i class="fas fa-chess-knight"></i></p>
+  </div>
+
+  <!-- ======================================== -->
+  <!-- CARD 1 : PRE-MOVE CHECKLIST (deep dive)  -->
+  <!-- ======================================== -->
+  <div class="card">
+    <div class="card-header" onclick="toggleCard(this)">
+      <h2><i class="fas fa-check-circle"></i> Pre‑Move Checklist <span class="badge gold">MUST DRILL</span></h2>
+      <span class="toggle-icon"><i class="fas fa-chevron-down"></i></span>
+    </div>
+    <div class="card-body open">
+      <p style="font-weight:500; margin-bottom:1rem;">Run these 3 steps <strong>before every single move</strong> — this alone beats 80% of 1300 blunders.</p>
+
+      <div class="deep-section">
+        <h3><i class="fas fa-shield-alt"></i> 1. Safety — “Is my piece hanging?”</h3>
+        <ul>
+          <li>Scan every loose piece (queen, rooks, minor pieces). Count <strong>attackers vs. defenders</strong>.</li>
+          <li>If a piece is attacked as many times as it is defended, <em>do not move</em> until you reinforce or trade.</li>
+          <li>Pay special attention to your <strong>back‑rank</strong> — if your king is trapped behind pawns, a rook on the 8th can be deadly.</li>
+        </ul>
+      </div>
+
+      <div class="deep-section">
+        <h3><i class="fas fa-bullseye"></i> 2. Threats — “What is their last move attacking?”</h3>
+        <ul>
+          <li>Identify the <strong>new square</strong> their piece just moved to. Did it open a diagonal for a bishop? Is it attacking your queen?</li>
+          <li>Ask: “Is my opponent threatening <strong>mate in 1</strong> or a winning fork?” Always respond to the biggest threat first.</li>
+          <li>If they attack your queen, consider a <strong>counter‑attack</strong> with check — don’t always retreat!</li>
+        </ul>
+      </div>
+
+      <div class="deep-section">
+        <h3><i class="fas fa-brain"></i> 3. Blunder‑check — “Does my move leave something unprotected?”</h3>
+        <ul>
+          <li>After you mentally make the move, <strong>re‑evaluate</strong>: does it remove a defender from your king? Does it block your rook’s line?</li>
+          <li>Never move a piece if it <strong>unpins</strong> an enemy piece that was trapped — unless you gain a bigger advantage.</li>
+          <li>The golden rule: <strong>If you see a good move, look for a better one.</strong> Pause 3 more seconds.</li>
+        </ul>
+      </div>
+
+      <div class="highlight-box">
+        <i class="fas fa-lightbulb" style="color:#f0c27f; margin-right:10px;"></i>
+        <strong>Pro tip:</strong> Whisper these three out loud as you look at the board. It forces your brain into structured mode.
+      </div>
+    </div>
+  </div>
+
+  <!-- ======================================== -->
+  <!-- CARD 2 : OPENINGS (deep dive)            -->
+  <!-- ======================================== -->
+  <div class="card">
+    <div class="card-header" onclick="toggleCard(this)">
+      <h2><i class="fas fa-chess-pawn"></i> Opening Repertoire <span class="badge">Deep lines</span></h2>
+      <span class="toggle-icon"><i class="fas fa-chevron-down"></i></span>
+    </div>
+    <div class="card-body">
+      <p style="margin-bottom:1rem;">Pick <strong>one</strong> for White and <strong>one</strong> for Black. Master them cold — no need for 20 openings.</p>
+
+      <!-- White -->
+      <div class="deep-section">
+        <h3><i class="fas fa-chess-king"></i> White · London System (Solid & reliable)</h3>
+        <p><strong>Core moves:</strong></p>
+        <div class="move-grid">
+          <div class="move-line"><span>1.</span> d4</div>
+          <div class="move-line"><span>2.</span> Bf4</div>
+          <div class="move-line"><span>3.</span> e3</div>
+          <div class="move-line"><span>4.</span> Nf3</div>
+          <div class="move-line"><span>5.</span> Be2</div>
+          <div class="move-line"><span>6.</span> 0‑0</div>
+          <div class="move-line"><span>7.</span> c3</div>
+          <div class="move-line"><span>8.</span> Nbd2</div>
+        </div>
+        <ul>
+          <li><strong>Why?</strong> Avoids sharp theory. Bishop on f4 is active, pawns on e3/c3 give a rock‑solid center.</li>
+          <li>If Black plays …c5, you can take and recapture with the pawn — keep the structure intact.</li>
+          <li>Typical plan: push e4 (after proper preparation) to break the center.</li>
+        </ul>
+      </div>
+
+      <!-- Black vs e4 -->
+      <div class="deep-section">
+        <h3><i class="fas fa-chess-king"></i> Black vs e4 · Caro‑Kann (Ultra‑solid)</h3>
+        <p><strong>Core moves:</strong></p>
+        <div class="move-grid">
+          <div class="move-line"><span>1.</span> e4 c6</div>
+          <div class="move-line"><span>2.</span> d4 d5</div>
+          <div class="move-line"><span>3.</span> exd5 cxd5</div>
+          <div class="move-line"><span>4.</span> Bd3 Nc6</div>
+          <div class="move-line"><span>5.</span> c3 Nf6</div>
+          <div class="move-line"><span>6.</span> Bf4 Bg4</div>
+        </div>
+        <ul>
+          <li><strong>Why?</strong> You get a pawn on d5 that exchanges their center. Very few traps.</li>
+          <li>Develop the bishop to f5 or g4 to put pressure on their knight.</li>
+          <li>Castle short quickly, then play …e6 and …Bd6 to trade off their active bishop.</li>
+        </ul>
+      </div>
+
+      <!-- Black vs d4 -->
+      <div class="deep-section">
+        <h3><i class="fas fa-chess-king"></i> Black vs d4 · King’s Indian Setup</h3>
+        <p><strong>Core moves:</strong></p>
+        <div class="move-grid">
+          <div class="move-line"><span>1.</span> d4 Nf6</div>
+          <div class="move-line"><span>2.</span> c4 g6</div>
+          <div class="move-line"><span>3.</span> Nc3 Bg7</div>
+          <div class="move-line"><span>4.</span> e4 d6</div>
+          <div class="move-line"><span>5.</span> Be2 0‑0</div>
+          <div class="move-line"><span>6.</span> Nf3 e5</div>
+        </div>
+        <ul>
+          <li><strong>Why?</strong> Fianchetto gives king safety and a powerful bishop on the long diagonal.</li>
+          <li>Strike in the center with …e5 to challenge their pawn chain.</li>
+          <li>Typical plan: build a kingside attack with …Ne8‑f6‑g5 and …f5.</li>
+        </ul>
+      </div>
+
+      <div class="highlight-box">
+        <i class="fas fa-clock" style="color:#f0c27f; margin-right:10px;"></i>
+        <strong>Golden rule:</strong> Castle <strong>before move 10</strong>. Don’t bring the queen out before move 10. Never move the same piece twice in the opening unless forced.
+      </div>
+    </div>
+  </div>
+
+  <!-- ======================================== -->
+  <!-- CARD 3 : MIDDLEGAME (deep dive)          -->
+  <!-- ======================================== -->
+  <div class="card">
+    <div class="card-header" onclick="toggleCard(this)">
+      <h2><i class="fas fa-chess-knight"></i> Middlegame Tactics Bank</h2>
+      <span class="toggle-icon"><i class="fas fa-chevron-down"></i></span>
+    </div>
+    <div class="card-body">
+      <p style="margin-bottom:1rem;">This is where games are won. Learn these <strong>4 tactical patterns</strong> by heart.</p>
+
+      <div class="deep-section">
+        <h3><i class="fas fa-code-branch"></i> Fork · One piece attacks two</h3>
+        <ul>
+          <li><strong>Knight fork:</strong> Nc7+ forks the king and rook. Ne7+ forks king and queen.</li>
+          <li><strong>Pawn fork:</strong> d4‑d5 can attack a knight and bishop simultaneously.</li>
+          <li><em>Tip:</em> Always check if your opponent’s pieces are on the same colour square as your knight.</li>
+        </ul>
+      </div>
+
+      <div class="deep-section">
+        <h3><i class="fas fa-thumbtack"></i> Pin · Immobilise a defender</h3>
+        <ul>
+          <li><strong>Absolute pin:</strong> a piece is in front of the <em>king</em> — it cannot move at all (e.g., Bg5 pinning a knight to the queen).</li>
+          <li><strong>Relative pin:</strong> in front of the queen or rook — moving it loses material, but it’s not illegal.</li>
+          <li>Pins are deadly in the middlegame — pile up attackers on a pinned piece to win it.</li>
+        </ul>
+      </div>
+
+      <div class="deep-section">
+        <h3><i class="fas fa-arrow-right"></i> Skewer · The bigger fish</h3>
+        <ul>
+          <li>Attack a valuable piece (king/queen) so that when it moves, a less valuable piece behind it is captured.</li>
+          <li>Classic: rook on the same file as their king and queen — the king must move, then you take the queen.</li>
+          <li>Bishops on a diagonal can also skewer rooks or queens.</li>
+        </ul>
+      </div>
+
+      <div class="deep-section">
+        <h3><i class="fas fa-chess-rook"></i> Back‑rank mate · The silent killer</h3>
+        <ul>
+          <li>If the king is trapped behind pawns on g2/h2 or g7/h7 (no escape squares), a rook or queen on the 8th (or 1st) rank delivers mate.</li>
+          <li>Before you castle, always think: <strong>“Do I need luft?”</strong> — push h3 or a3 to give your king an escape.</li>
+          <li>In the middlegame, look for rook lifts to the 2nd or 7th rank to pressure the back rank.</li>
+        </ul>
+      </div>
+
+      <div class="highlight-box">
+        <i class="fas fa-sync-alt" style="color:#f0c27f; margin-right:10px;"></i>
+        <strong>Counter‑attack principle:</strong> When they attack your piece, look for a <em>bigger</em> threat first — a check or mate that forces them to respond.
+      </div>
+    </div>
+  </div>
+
+  <!-- ======================================== -->
+  <!-- CARD 4 : ENDGAME (deep dive)             -->
+  <!-- ======================================== -->
+  <div class="card">
+    <div class="card-header" onclick="toggleCard(this)">
+      <h2><i class="fas fa-flag-checkered"></i> Endgame · Converting Wins</h2>
+      <span class="toggle-icon"><i class="fas fa-chevron-down"></i></span>
+    </div>
+    <div class="card-body">
+      <p style="margin-bottom:1rem;">Most 1200‑1300 players reach a winning endgame and throw it. Lock these in.</p>
+
+      <div class="deep-section">
+        <h3><i class="fas fa-balance-scale"></i> The 50/50 rule</h3>
+        <ul>
+          <li>If you are <strong>up a pawn</strong>: trade <em>pieces</em> (queens, rooks) but <strong>never trade pawns</strong> — keep your extra pawn alive.</li>
+          <li>If you are <strong>down a pawn</strong>: trade pawns to remove their advantage, and keep pieces on to complicate.</li>
+        </ul>
+      </div>
+
+      <div class="deep-section">
+        <h3><i class="fas fa-walking"></i> King activation</h3>
+        <ul>
+          <li>In the endgame, the king is a <strong>fighting piece</strong>. Walk it toward the center to support pawns.</li>
+          <li>Rule of thumb: the king should be on the same side as your passed pawn to escort it.</li>
+        </ul>
+      </div>
+
+      <div class="deep-section">
+        <h3><i class="fas fa-chess-queen"></i> Rook + King mate (box method)</h3>
+        <ul>
+          <li>Use the rook to <strong>cut off</strong> the enemy king on a rank or file.</li>
+          <li>Bring your king closer to support the rook.</li>
+          <li>Deliver checks along the rank/file, shrinking the box until mate.</li>
+        </ul>
+      </div>
+
+      <div class="deep-section">
+        <h3><i class="fas fa-chess-queen"></i> Queen + King mate</h3>
+        <ul>
+          <li>Place your queen a <strong>knight’s move</strong> away from their king — this restricts all escape squares.</li>
+          <li>Copy their king’s moves until it is pushed to the edge, then bring your king to deliver the final mate.</li>
+        </ul>
+      </div>
+
+      <div class="deep-section">
+        <h3><i class="fas fa-arrow-up"></i> Passed pawns</h3>
+        <ul>
+          <li>Put your rook <strong>behind</strong> the passed pawn (on its file) to push it up the board.</li>
+          <li>If you have two passed pawns separated by one file, they are unstoppable — use them as a battering ram.</li>
+        </ul>
+      </div>
+
+      <div class="highlight-box">
+        <i class="fas fa-crown" style="color:#f0c27f; margin-right:10px;"></i>
+        <strong>Endgame motto:</strong> “Passed pawns must be pushed.” And never rush — take your time to calculate.
+      </div>
+    </div>
+  </div>
+
+  <!-- ======================================== -->
+  <!-- MOVE TRAINER QUIZ                        -->
+  <!-- ======================================== -->
+  <div class="quiz-widget" id="quizWidget">
+    <div class="quiz-header">
+      <h3><i class="fas fa-graduation-cap"></i> 🧠 Move Trainer</h3>
+      <span class="quiz-progress" id="quizProgress">1 / 6</span>
+    </div>
+
+    <div class="quiz-question" id="quizQuestion">Loading question…</div>
+
+    <div class="quiz-options" id="quizOptions"></div>
+
+    <div id="quizFeedback" class="quiz-feedback"></div>
+
+    <button class="quiz-next-btn" id="quizNextBtn" disabled>Next →</button>
+    <div style="clear:both;"></div>
+  </div>
+
+  <div class="footer-note">
+    <i class="fas fa-chess-board"></i> Drill these until they’re automatic — 1300 is yours.
+  </div>
+
+</div>
+
+<script>
+  // ---- CARD TOGGLE (expand/collapse) ----
+  function toggleCard(headerEl) {
+    const body = headerEl.parentElement.querySelector('.card-body');
+    const icon = headerEl.querySelector('.toggle-icon i');
+    if (body.classList.contains('open')) {
+      body.classList.remove('open');
+      icon.className = 'fas fa-chevron-down';
+    } else {
+      body.classList.add('open');
+      icon.className = 'fas fa-chevron-up';
+    }
+  }
+
+  // ---- QUIZ DATA ----
+  const quizData = [
+    {
+      question: 'Before every move, what is the FIRST thing you must check?',
+      options: ['Safety (is my piece hanging?)', 'Threats (what are they attacking?)', 'Blunder-check (does my move leave something?)'],
+      correct: 0,
+      explanation: '✅ Safety first! Check if your queen, rooks, or minor pieces are undefended. If they are, fix that before anything else.'
+    },
+    {
+      question: 'What tactic attacks two pieces at once with a single move?',
+      options: ['Pin', 'Fork', 'Skewer'],
+      correct: 1,
+      explanation: '✅ A fork! Knights and pawns are classic forking pieces. Always look for double attacks.'
+    },
+    {
+      question: 'In the endgame, if you are up a pawn, what should you do?',
+      options: ['Trade pieces & keep pawns', 'Trade pawns & keep pieces', 'Push the pawn immediately'],
+      correct: 0,
+      explanation: '✅ Trade pieces (queens/rooks) to reduce counterplay, but KEEP your pawns — that extra pawn is your win condition.'
+    },
+    {
+      question: 'Which opening starts with 1.d4, 2.Bf4, 3.e3?',
+      options: ['King\'s Indian', 'Caro-Kann', 'London System'],
+      correct: 2,
+      explanation: '✅ The London System! Solid, easy to learn, and avoids early traps. Perfect for club players.'
+    },
+    {
+      question: 'True or False: You should bring your queen out before move 10 in the opening.',
+      options: ['True', 'False'],
+      correct: 1,
+      explanation: '❌ False! Early queen moves allow your opponent to develop pieces while attacking your queen, losing you tempo. Develop minor pieces first!'
+    },
+    {
+      question: 'What is a "skewer"?',
+      options: ['Attack a valuable piece so a less valuable one is captured behind it', 'Immobilise a piece in front of the king', 'Attack two pieces at once'],
+      correct: 0,
+      explanation: '✅ A skewer! Line up your rook/bishop so the king or queen is forced to move, exposing a second piece behind it.'
+    }
+  ];
+
+  let currentIndex = 0;
+  let answered = false;
+  let totalQuestions = quizData.length;
+
+  const qEl = document.getElementById('quizQuestion');
+  const optEl = document.getElementById('quizOptions');
+  const fbEl = document.getElementById('quizFeedback');
+  const nextBtn = document.getElementById('quizNextBtn');
+  const progEl = document.getElementById('quizProgress');
+
+  function loadQuestion(index) {
+    const data = quizData[index];
+    qEl.textContent = data.question;
+    optEl.innerHTML = '';
+    fbEl.innerHTML = '';
+    fbEl.className = 'quiz-feedback';
+    nextBtn.disabled = true;
+    answered = false;
+
+    data.options.forEach((opt, i) => {
+      const btn = document.createElement('button');
+      btn.textContent = opt;
+      btn.dataset.index = i;
+      btn.addEventListener('click', () => handleAnswer(i, data.correct, btn));
+      optEl.appendChild(btn);
+    });
+
+    progEl.textContent = `${index + 1} / ${totalQuestions}`;
+  }
+
+  function handleAnswer(selected, correct, btnEl) {
+    if (answered) return;
+    answered = true;
+    const allBtns = optEl.querySelectorAll('button');
+    allBtns.forEach(b => b.disabled = true);
+
+    const data = quizData[currentIndex];
+    let isCorrect = selected === correct;
+
+    // highlight correct/wrong
+    allBtns.forEach((b, i) => {
+      if (i === correct) b.classList.add('correct');
+      else if (i === selected && !isCorrect) b.classList.add('wrong');
+    });
+
+    fbEl.className = `quiz-feedback ${isCorrect ? 'correct-fb' : 'wrong-fb'}`;
+    fbEl.innerHTML = `
+      <span class="fb-icon">${isCorrect ? '✅' : '❌'}</span>
+      <span>${data.explanation}</span>
+    `;
+
+    nextBtn.disabled = false;
+  }
+
+  nextBtn.addEventListener('click', () => {
+    currentIndex = (currentIndex + 1) % totalQuestions;
+    loadQuestion(currentIndex);
+    // scroll to quiz smoothly
+    document.getElementById('quizWidget').scrollIntoView({ behavior: 'smooth', block: 'center' });
+  });
+
+  // ---- INIT ----
+  loadQuestion(0);
+
+  // ---- auto-open first card body? already open in HTML ----
+  // (the Pre-Move card has class "open" by default)
+</script>
+</body>
+</html>
